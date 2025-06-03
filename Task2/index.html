@@ -16,5 +16,16 @@
         <li>Contact</li>
       </ul>
     </nav>
+    
+    <script>
+      // Get the menu button and menu elements
+      const menuBtn = document.getElementById('menuBtn');
+      const menu = document.getElementById('menu');
+      
+      // Add click event listener to toggle the menu
+      menuBtn.addEventListener('click', function() {
+        menu.classList.toggle('open');
+      });
+    </script>
   </body>
 </html>

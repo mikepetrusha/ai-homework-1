@@ -17,13 +17,15 @@ export const PricingCard = ({
     <div
       className={clsx(
         "flex flex-col h-full w-full md:max-w-[25rem]",
-        "transition-shadow hover:shadow-xl",
+        "transition-all duration-500 ease-in-out transform",
+        "hover:shadow-2xl md:hover:translate-y-[-0.4rem] md:hover:scale-[1.03]",
         "focus-within:outline focus-within:outline-blue-400 focus-within:outline-offset-2",
         {
           "bg-white text-slate-700 px-8": !isFeatured,
           "bg-slate-700 text-white": isFeatured,
           "z-10": isFeatured,
           "md:scale-110 md:translate-y-[-0.3rem]": isFeatured, // Makes featured card larger
+          "md:hover:scale-[1.13] md:hover:translate-y-[-0.5rem]": isFeatured, // Enhanced hover for featured card
         }
       )}
     >

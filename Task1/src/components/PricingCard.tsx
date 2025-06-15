@@ -16,16 +16,16 @@ export const PricingCard = ({
   return (
     <div
       className={clsx(
-        "flex flex-col h-full w-full md:max-w-[25rem]",
+        "flex flex-col h-full w-full max-w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[25rem] mx-auto",
         "transition-all duration-500 ease-in-out transform",
-        "hover:shadow-2xl md:hover:translate-y-[-0.4rem] md:hover:scale-[1.03]",
-        "focus-within:outline focus-within:outline-blue-400 focus-within:outline-offset-2",
+        "hover:shadow-2xl lg:hover:translate-y-[-0.4rem] lg:hover:scale-[1.03]",
+        "focus-within:ring-4 focus-within:ring-blue-400",
         {
           "bg-white text-slate-700 px-8": !isFeatured,
           "bg-slate-700 text-white": isFeatured,
           "z-10": isFeatured,
-          "md:scale-110 md:translate-y-[-0.3rem]": isFeatured, // Makes featured card larger
-          "md:hover:scale-[1.13] md:hover:translate-y-[-0.5rem]": isFeatured, // Enhanced hover for featured card
+          "lg:scale-110 lg:translate-y-[-0.3rem]": isFeatured, // Makes featured card larger
+          "lg:hover:scale-[1.13] lg:hover:translate-y-[-0.5rem]": isFeatured, // Enhanced hover for featured card
         }
       )}
     >
@@ -65,13 +65,17 @@ export const PricingCard = ({
       <div className="p-8 text-center">
         <button
           className={clsx(
-            "w-full py-2 uppercase text-sm font-medium tracking-wider",
-            "transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ",
+            "w-full py-2 uppercase text-sm font-medium tracking-wider border",
+            "transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2",
+            "relative overflow-hidden",
             {
-              "bg-transparent text-slate-700 border-slate-700 hover:bg-slate-50 focus:ring-slate-500":
+              "bg-transparent text-slate-700 border-slate-700 hover:bg-slate-50 focus:ring-blue-500":
                 !isFeatured,
-              "bg-transparent text-white border-white hover:bg-slate-600 focus:ring-white":
+              "bg-transparent text-white border-white hover:bg-slate-600 focus:ring-blue-300":
                 isFeatured,
+              "after:absolute after:inset-0 after:bg-blue-400/10 after:scale-x-0 after:origin-left after:transition-transform after:duration-300":
+                true,
+              "hover:after:scale-x-100": true,
             }
           )}
         >

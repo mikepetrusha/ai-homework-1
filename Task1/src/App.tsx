@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4">
       <h1 className="text-3xl font-bold text-white mb-16">Pricing</h1>
-      <div className="w-full max-w-5xl flex flex-col md:flex-row justify-center gap-6 md:gap-0">
+      <div className="w-full max-w-5xl flex flex-col lg:flex-row justify-center gap-6 lg:gap-0">
         <PricingCard
           plan="Standard"
           price="$100"
